@@ -5,8 +5,12 @@ require 'puma'
 require './database'
 require './models'
 
-
-set :database, "sqlite3:wdi.db"
+configure :development do
+  set :database, "sqlite3:wdi.db"
+end
+configure :prodution do
+  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+end
 
 enable :sessions
 
