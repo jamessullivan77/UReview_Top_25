@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UReview Emails</title>
+</head>
+<body>
+<h1>Email List</h1>
+<p>
+	<% @visitors.each do |visitor| %>
+		<p><%= visitor.email %></p>
+	<% end %>
+</p>
+
+</body>
+</html>
